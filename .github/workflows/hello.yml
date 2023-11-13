@@ -43,10 +43,10 @@ jobs:
   job1:
     name: First Job
     runs-on: ubuntu-latest
+    if: github.event.head_commit.message == 'Test'
     steps:
       - name: Step one
         uses: actions/checkout@v3
       - name: Step two
         run: |
-          env | sort
           echo "Hello world"
